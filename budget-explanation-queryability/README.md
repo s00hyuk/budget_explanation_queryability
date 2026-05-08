@@ -121,20 +121,23 @@ There are two ways to run the saved-output reproduction in Colab. Path A is the 
 Run the following two cells in a Colab notebook. No manual upload required.
 
 ```python
-# Cell 1: download + extract
+# [Reviewer Instruction] 
+# 이 셀은 Double-blind peer review를 위해 익명화된 저장소에서 코드를 다운로드하고 환경을 구성합니다.
+
 import os, glob, shutil
+
+# 1. 기존 폴더 초기화 및 익명 저장소에서 ZIP 파일 다운로드
 shutil.rmtree("/content/budget-explanation-queryability", ignore_errors=True)
 !wget -q "https://anonymous.4open.science/api/repo/budget_explanation_queryability/zip" -O /content/package.zip
 !unzip -oq /content/package.zip -d /content/
 
+# 2. 실행 스크립트(run_reproduce_saved_outputs.sh)가 있는 최상위 경로 동적 탐색
 ROOT = os.path.dirname(glob.glob("/content/**/run_reproduce_saved_outputs.sh", recursive=True)[0])
-print("ROOT:", ROOT)
-```
+print("Working Directory Set To:", ROOT)
 
-```python
-# Cell 2: install dependencies and run reproduction
+# 3. 작업 디렉토리 이동 후 패키지 설치 및 자동 재현 스크립트 실행
 %cd {ROOT}
-!pip install -q rdflib
+!pip install -q -r requirements.txt
 !bash run_reproduce_saved_outputs.sh
 ```
 
