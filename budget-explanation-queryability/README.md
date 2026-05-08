@@ -114,22 +114,53 @@ budget-explanation-queryability/
 
 ## Colab execution (recommended for reviewers)
 
-For Colab users, the fastest path is the dedicated setup notebook:
+There are two ways to run the saved-output reproduction in Colab. Path A is the fastest if you have access to the anonymous review URL.
 
-1. Open [`notebooks/setup_colab.ipynb`](notebooks/setup_colab.ipynb) in Colab
+### Path A — Direct download from anonymous repository (fastest)
+
+Run the following two cells in a Colab notebook. No manual upload required.
+
+```python
+# Cell 1: download + extract
+import os, glob, shutil
+shutil.rmtree("/content/budget-explanation-queryability", ignore_errors=True)
+!wget -q "https://anonymous.4open.science/api/repo/budget_explanation_queryability/zip" -O /content/package.zip
+!unzip -oq /content/package.zip -d /content/
+
+ROOT = os.path.dirname(glob.glob("/content/**/run_reproduce_saved_outputs.sh", recursive=True)[0])
+print("ROOT:", ROOT)
+```
+
+```python
+# Cell 2: install dependencies and run reproduction
+%cd {ROOT}
+!pip install -q rdflib
+!bash run_reproduce_saved_outputs.sh
+```
+
+The script verifies all required artifacts exist, reproduces the paper's headline F1 numbers (within 0.05 pp tolerance), and reproduces the paired bootstrap CIs.
+
+### Path B — Upload ZIP via setup notebook
+
+For Colab users who already have a local copy of the repository ZIP:
+
+1. Open `notebooks/setup_colab.ipynb` in Colab
 2. Upload the repository ZIP file (e.g., `budget-explanation-queryability.zip`) to `/content/` (Files sidebar) **or** mount Google Drive and copy the ZIP
 3. Run all cells in order
 
 The setup notebook:
-- Detects and extracts the package
-- Installs dependencies (`pandas`, `numpy`, `rdflib`, `openpyxl`, `matplotlib`)
-- Verifies all required artifacts
-- Runs the three saved-output reproduction scripts
-- Cross-checks reproduced F1 values against the paper's official numbers (within 0.05 pp tolerance)
+
+* Detects and extracts the package
+* Installs dependencies (`pandas`, `numpy`, `rdflib`, `openpyxl`, `matplotlib`)
+* Verifies all required artifacts
+* Runs the three saved-output reproduction scripts
+* Cross-checks reproduced F1 values against the paper's official numbers (within 0.05 pp tolerance)
+
+### Notes (both paths)
 
 Total runtime: ~2 minutes. **No LLM API calls. Fully deterministic.**
 
-The main pipeline notebook `notebooks/budget_5method_pipeline.ipynb` preserves the full experimental implementation. Full regeneration from raw data requires LLM API access and is **not** bit-level deterministic across runs (see [`docs/reproducibility.md`](docs/reproducibility.md) §1).
+The main pipeline notebook `notebooks/budget_5method_pipeline.ipynb` preserves the full experimental implementation. Full regeneration from raw data requires LLM API access and is **not** bit-level deterministic across runs (see `docs/reproducibility.md` §1).
 
 ---
 
