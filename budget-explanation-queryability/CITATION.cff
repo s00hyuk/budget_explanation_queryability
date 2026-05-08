@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+title: "2026 AI Budget Projects: 5-Method Perturbed Queryability Benchmark"
+message: "If you use this repository, please cite the associated paper. Author information is anonymized for review."
+type: software
+authors:
+  - name: "Anonymous"
+version: "v1.0-review"
+date-released: "2026-05-07"

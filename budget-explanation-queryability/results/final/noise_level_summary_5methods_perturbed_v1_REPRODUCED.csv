@@ -1,0 +1,16 @@
+﻿method,question_noise_level,n,precision,recall,f1
+JSON Serialization Vector RAG,L1_strict,30,31.67,27.22,27.78
+JSON Serialization Vector RAG,L2_realistic,50,17.0,11.33,13.0
+JSON Serialization Vector RAG,L3_perturbed,20,0.0,0.0,0.0
+Plain Text Vector RAG,L1_strict,30,38.33,33.33,32.56
+Plain Text Vector RAG,L2_realistic,50,62.0,40.67,47.0
+Plain Text Vector RAG,L3_perturbed,20,5.0,1.67,2.5
+RDF Template SPARQL v3,L1_strict,30,68.33,63.33,65.33
+RDF Template SPARQL v3,L2_realistic,50,58.0,57.33,57.6
+RDF Template SPARQL v3,L3_perturbed,20,50.0,50.0,50.0
+Text-to-Pandas Agent,L1_strict,30,66.67,56.11,59.22
+Text-to-Pandas Agent,L2_realistic,50,68.0,66.0,66.6
+Text-to-Pandas Agent,L3_perturbed,20,20.0,16.67,17.5
+XLSX Template Executor v4,L1_strict,30,81.67,78.89,80.0
+XLSX Template Executor v4,L2_realistic,50,60.0,58.67,59.2
+XLSX Template Executor v4,L3_perturbed,20,60.0,58.33,59.0

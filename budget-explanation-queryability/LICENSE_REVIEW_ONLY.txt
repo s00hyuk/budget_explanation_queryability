@@ -1,0 +1,7 @@
+Review-only package. License to be selected by the authors before public release.
+
+Recommended options:
+- Code: MIT License
+- Data/docs: CC BY 4.0, if the authors have rights to redistribute all included materials
+
+Do not assume reuse rights until the final public repository license is selected.

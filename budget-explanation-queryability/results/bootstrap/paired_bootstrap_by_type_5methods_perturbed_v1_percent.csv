@@ -1,0 +1,37 @@
+﻿type,comparison,n,mean_diff_pct,ci_low_pct,ci_high_pct,significant_95
+Aggregation,JSON − Vector (3단계 vs 1단계 표현),15,0.0,0.0,0.0,No
+Aggregation,Text-to-Pandas − Vector,15,13.33,0.0,33.33,No
+Aggregation,RDF − Vector,15,46.67,20.0,73.33,Yes
+Aggregation,XLSX − Vector,15,53.33,26.67,80.0,Yes
+Aggregation,Text-to-Pandas − JSON,15,13.33,0.0,33.33,No
+Aggregation,XLSX − JSON,15,53.33,26.67,80.0,Yes
+Aggregation,XLSX − Text-to-Pandas (쿼리 자동생성 손실),15,40.0,6.67,66.67,Yes
+Aggregation,RDF − Text-to-Pandas,15,33.33,13.33,60.0,Yes
+Aggregation,XLSX − RDF (구조별 상한선),15,6.67,-20.0,33.33,No
+ComplexFilter,JSON − Vector (3단계 vs 1단계 표현),25,-11.87,-24.27,-1.6,No
+ComplexFilter,Text-to-Pandas − Vector,25,46.13,26.67,64.93,Yes
+ComplexFilter,RDF − Vector,25,26.27,8.27,44.93,Yes
+ComplexFilter,XLSX − Vector,25,46.0,26.0,65.2,Yes
+ComplexFilter,Text-to-Pandas − JSON,25,58.0,38.8,76.0,Yes
+ComplexFilter,XLSX − JSON,25,57.87,38.67,76.0,Yes
+ComplexFilter,XLSX − Text-to-Pandas (쿼리 자동생성 손실),25,-0.13,-25.33,24.67,No
+ComplexFilter,RDF − Text-to-Pandas,25,-19.87,-44.4,4.13,No
+ComplexFilter,XLSX − RDF (구조별 상한선),25,19.73,4.53,36.53,Yes
+MultiHop,JSON − Vector (3단계 vs 1단계 표현),30,-4.56,-17.44,8.56,No
+MultiHop,Text-to-Pandas − Vector,30,-5.78,-24.22,13.22,No
+MultiHop,RDF − Vector,30,24.67,8.11,40.44,Yes
+MultiHop,XLSX − Vector,30,38.22,22.33,53.44,Yes
+MultiHop,Text-to-Pandas − JSON,30,-1.22,-17.56,14.89,No
+MultiHop,XLSX − JSON,30,42.78,25.67,59.11,Yes
+MultiHop,XLSX − Text-to-Pandas (쿼리 자동생성 손실),30,44.0,27.44,60.67,Yes
+MultiHop,RDF − Text-to-Pandas,30,30.44,11.33,49.0,Yes
+MultiHop,XLSX − RDF (구조별 상한선),30,13.56,1.33,25.78,Yes
+Reverse,JSON − Vector (3단계 vs 1단계 표현),30,-48.67,-63.11,-33.67,No
+Reverse,Text-to-Pandas − Vector,30,30.0,17.11,43.56,Yes
+Reverse,RDF − Vector,30,12.22,-7.44,31.78,No
+Reverse,XLSX − Vector,30,2.22,-19.67,24.33,No
+Reverse,Text-to-Pandas − JSON,30,78.67,66.22,90.0,Yes
+Reverse,XLSX − JSON,30,50.89,30.89,69.56,Yes
+Reverse,XLSX − Text-to-Pandas (쿼리 자동생성 손실),30,-27.78,-45.56,-10.0,No
+Reverse,RDF − Text-to-Pandas,30,-17.78,-34.44,-2.22,No
+Reverse,XLSX − RDF (구조별 상한선),30,-10.0,-22.22,1.11,No

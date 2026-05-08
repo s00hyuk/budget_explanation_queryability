@@ -1,0 +1,123 @@
+{
+  "experiment_name": "5method_perturbed_v1",
+  "package_version": "v1.0-paper-submission",
+  "created_at": "2026-05-08T00:48:11.653100",
+  "review_anonymity_note": "Anonymized for double-blind review. Author and institution information will be added for camera-ready release.",
+  "methods": [
+    "Plain Text Vector RAG",
+    "JSON Serialization Vector RAG",
+    "Text-to-Pandas Agent",
+    "RDF Template SPARQL v3",
+    "XLSX Template Executor v4"
+  ],
+  "method_count": 5,
+  "evaluation_set_size": 100,
+  "source_data_count": 533,
+  "source_data_description": "AI-related fiscal projects from Korea's 2026 government budget",
+  "machine_readable_mapping": {
+    "1단계_PDF": "Plain Text Vector RAG",
+    "2단계_HWPX_XLSX": "XLSX Template Executor v4",
+    "3단계_CSV_JSON_XML": "JSON Serialization Vector RAG",
+    "3단계_alt_query": "Text-to-Pandas Agent",
+    "4단계_RDF": "RDF Template SPARQL v3",
+    "5단계_LOD": "한계 + 향후과제 (미구현)"
+  },
+  "design_principles": {
+    "single_evaluator": "All 5 methods evaluated with the identical evaluator function",
+    "no_oracle": "Gold and acceptable_answers are NEVER passed to any method's input or prompt; used only for scoring",
+    "perturbed_fixed": "Perturbed questions are generated once and fixed; not re-randomized per method",
+    "true_paired_bootstrap": "Same resampled indices applied to both methods, NaN-masked, 10000 iterations, seed=42"
+  },
+  "official_result_files": {
+    "overall_summary": "results/final/overall_summary_5methods_perturbed_v1.csv",
+    "type_summary": "results/final/type_summary_5methods_perturbed_v1.csv",
+    "noise_level_summary": "results/final/noise_level_summary_5methods_perturbed_v1.csv",
+    "eval_long": "results/final/final_eval_long_5methods_perturbed_v1.csv",
+    "bootstrap_overall": "results/bootstrap/paired_bootstrap_5methods_perturbed_v1_percent.csv",
+    "bootstrap_by_type": "results/bootstrap/paired_bootstrap_by_type_5methods_perturbed_v1_percent.csv",
+    "evaluation_mode_summary": "results/final/evaluation_mode_summary_5methods_perturbed_v1.csv",
+    "text_to_pandas_severe_failure_diagnostics": "results/final/text_to_pandas_severe_failure_error_type_summary_f1_lt_05.csv"
+  },
+  "data_files": {
+    "perturbed_gold": "data/goldset/query_logic_fullset_perturbed_v1.csv",
+    "original_gold": "data/goldset/query_logic_fullset_original.csv",
+    "perturb_quality": "data/goldset/perturbation_quality_check_v1.csv",
+    "source_xlsx": "data/raw/budget_533.xlsx",
+    "source_json": "data/raw/parsed_budget_533_corrected.json",
+    "rdf_instance_graph": "data/rdf/budget_graph_v2.ttl",
+    "rdf_schema": "schema/bedo_v1.ttl"
+  },
+  "prediction_files": {
+    "plain_text": "data/predictions/vector_predictions_perturbed_v1.csv",
+    "json_rag": "data/predictions/json_rag_predictions_perturbed_v1.csv",
+    "text_to_pandas": "data/predictions/text_to_pandas_predictions_perturbed_v1.csv",
+    "rdf": "data/predictions/rdf_predictions_perturbed_v1.csv",
+    "xlsx": "data/predictions/xlsx_predictions_perturbed_v1.csv",
+    "final_comparison": "data/predictions/final_comparison_5methods_perturbed_v1.csv"
+  },
+  "saved_output_reproduction_scripts": [
+    "src/validation/validate_artifacts.py",
+    "src/evaluation/evaluate_saved_outputs.py",
+    "src/bootstrap/paired_bootstrap.py"
+  ],
+  "colab_setup_notebook": "notebooks/setup_colab.ipynb",
+  "full_pipeline_notebook": "notebooks/budget_5method_pipeline.ipynb",
+  "summary_f1_percent": {
+    "JSON Serialization Vector RAG": 14.83,
+    "Plain Text Vector RAG": 33.77,
+    "Text-to-Pandas Agent": 54.57,
+    "RDF Template SPARQL v3": 58.4,
+    "XLSX Template Executor v4": 65.4
+  },
+  "summary_f1_ge07_percent": {
+    "JSON Serialization Vector RAG": 7.0,
+    "Plain Text Vector RAG": 23.0,
+    "Text-to-Pandas Agent": 47.0,
+    "RDF Template SPARQL v3": 45.0,
+    "XLSX Template Executor v4": 59.0
+  },
+  "evaluation_set_distribution": {
+    "by_type": {
+      "MultiHop": 30,
+      "Reverse": 30,
+      "ComplexFilter": 25,
+      "Aggregation": 15
+    },
+    "by_noise_level": {
+      "L1_strict": 30,
+      "L2_realistic": 50,
+      "L3_perturbed": 20
+    },
+    "by_evaluation_mode": {
+      "exact_value": 18,
+      "exact_set": 13,
+      "any_3_from_candidate_set": 69
+    }
+  },
+  "notes": "v2_final package. Integrated documentation-oriented repository layout with executable saved-output reproduction scripts. Lightweight reproduction (saved-output path) requires only pandas and numpy. Full notebook regeneration requires LLM/API access and is not part of the deterministic reproduction path.",
+  "paper_version": "v3.18",
+  "benchmark_version": "perturbed_v1",
+  "supplementary_diagnostics": {
+    "description": "Text-to-Pandas low-performance case-level diagnostics. NOT used as the main paper table source.",
+    "files": {
+      "severe_failure_cases_f1_lt_05": "logs/text_to_pandas_severe_failure_cases_f1_lt_05.csv",
+      "primary_error_type_summary_f1_lt_07": "logs/text_to_pandas_low_performance_diagnostics/primary_error_type_summary_f1_lt_07.csv",
+      "error_flag_summary_f1_lt_07": "logs/text_to_pandas_low_performance_diagnostics/error_flag_summary_f1_lt_07.csv",
+      "case_details_f1_lt_07": "logs/text_to_pandas_low_performance_diagnostics/case_details_f1_lt_07.csv",
+      "diagnostic_artifact_index": "results/final/stage1_diagnostic_artifact_index.csv",
+      "readme": "logs/text_to_pandas_low_performance_diagnostics/README.md"
+    }
+  },
+  "paper_table_sources": {
+    "Table 5-1A": "results/final/overall_summary_5methods_perturbed_v1.csv (NL-input baselines)",
+    "Table 5-1B": "results/final/overall_summary_5methods_perturbed_v1.csv (query_logic upper-bound)",
+    "Table 5-2": "results/bootstrap/paired_bootstrap_5methods_perturbed_v1_percent.csv",
+    "Table 5-3": "results/final/type_summary_5methods_perturbed_v1.csv",
+    "Table 5-3A": "results/final/text_to_pandas_severe_failure_error_type_summary_f1_lt_05.csv",
+    "Table 5-3B": "results/final/evaluation_mode_summary_5methods_perturbed_v1.csv",
+    "Table 5-4": "results/final/noise_level_summary_5methods_perturbed_v1.csv"
+  },
+  "documentation": {
+    "table_5_3A_5_3B_strategy": "docs/paper_v3_18_table_5_3A_5_3B_strategy.md"
+  }
+}

@@ -1,0 +1,21 @@
+﻿method,type,n,precision,recall,f1
+JSON Serialization Vector RAG,Aggregation,15,0.0,0.0,0.0
+JSON Serialization Vector RAG,ComplexFilter,25,4.0,2.67,3.2
+JSON Serialization Vector RAG,MultiHop,30,50.56,38.33,41.0
+JSON Serialization Vector RAG,Reverse,30,6.11,5.56,5.78
+Plain Text Vector RAG,Aggregation,15,0.0,0.0,0.0
+Plain Text Vector RAG,ComplexFilter,25,18.67,13.33,15.07
+Plain Text Vector RAG,MultiHop,30,61.67,42.22,45.56
+Plain Text Vector RAG,Reverse,30,67.78,48.89,54.44
+RDF Template SPARQL v3,Aggregation,15,46.67,46.67,46.67
+RDF Template SPARQL v3,ComplexFilter,25,41.33,41.33,41.33
+RDF Template SPARQL v3,MultiHop,30,73.89,67.78,70.22
+RDF Template SPARQL v3,Reverse,30,66.67,66.67,66.67
+Text-to-Pandas Agent,Aggregation,15,13.33,13.33,13.33
+Text-to-Pandas Agent,ComplexFilter,25,68.0,58.67,61.2
+Text-to-Pandas Agent,MultiHop,30,45.56,37.22,39.78
+Text-to-Pandas Agent,Reverse,30,84.44,84.44,84.44
+XLSX Template Executor v4,Aggregation,15,53.33,53.33,53.33
+XLSX Template Executor v4,ComplexFilter,25,62.67,60.0,61.07
+XLSX Template Executor v4,MultiHop,30,86.11,82.22,83.78
+XLSX Template Executor v4,Reverse,30,56.67,56.67,56.67

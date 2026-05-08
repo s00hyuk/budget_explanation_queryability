@@ -1,0 +1,4 @@
+error_type,error_type_ko,count,share_pct,interpretation
+filter_condition_error,조건 해석 오류,19,47.5,자연어 조건을 query plan filter로 변환하는 과정에서 조건 누락 또는 오해석 발생
+table_or_column_mismatch,테이블·컬럼 선택 오류,11,27.5,df_base/df_subj 선택 또는 예산·기관·사업명 컬럼 grounding 실패
+entity_alias_error,기관명·약어 해석 오류,10,25.0,"NIA, IITP, 부처 약칭 등 기관명 alias 해석 실패"

@@ -1,0 +1,8 @@
+﻿primary_error_type,count,share_of_low_f1_cases_pct,mean_f1_pct
+no_result_or_empty_answer,23,43.4,0.0
+entity_alias_resolution_error,11,20.75,18.18
+column_or_schema_grounding_error,7,13.21,28.57
+partial_candidate_coverage_or_output_format_error,6,11.32,61.11
+numeric_or_aggregation_mismatch,3,5.66,0.0
+aggregation_operation_error,2,3.77,25.0
+output_format_error,1,1.89,0.0

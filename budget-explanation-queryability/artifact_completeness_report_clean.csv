@@ -1,0 +1,14 @@
+﻿file,exists,size_bytes
+README.md,True,11844
+requirements.txt,True,66
+FINAL_ARTIFACT_MANIFEST.md,True,3395
+notebooks/budget_5method_pipeline.ipynb,True,579707
+data/goldset/query_logic_fullset_perturbed_v1.csv,True,133288
+data/predictions/final_comparison_5methods_perturbed_v1.csv,True,156020
+results/final/final_eval_long_5methods_perturbed_v1.csv,True,136425
+results/final/overall_summary_5methods_perturbed_v1.csv,True,289
+results/bootstrap/paired_bootstrap_5methods_perturbed_v1_percent.csv,True,1172
+data/rdf/budget_graph_v2.ttl,True,506643
+schema/bedo_v1.ttl,True,2564
+logs/rdf_type_counts.csv,True,427
+logs/text_to_pandas_plan_diagnostics.csv,True,5206

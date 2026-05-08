@@ -1,0 +1,9 @@
+﻿error_flag,count,share_of_low_f1_cases_pct
+entity_alias_resolution_error,26,49.06
+column_or_schema_grounding_error,24,45.28
+no_result_or_empty_answer,23,43.4
+aggregation_operation_error,21,39.62
+numeric_or_aggregation_mismatch,16,30.19
+partial_candidate_coverage_or_output_format_error,14,26.42
+output_format_error,2,3.77
+condition_or_multistep_translation_error,1,1.89

@@ -1,0 +1,37 @@
+@prefix ex: <http://example.org/public-ai-budget#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:BudgetExplanationDomainOntology a owl:Ontology ;
+    rdfs:label "Budget Explanation Domain Ontology v1.0"@en ;
+    rdfs:comment "A lightweight ontology schema for Korean government budget explanation templates. The instance graph is provided separately in data/rdf/budget_graph_v2.ttl."@en .
+
+ex:Project a owl:Class ; rdfs:label "Budget Project"@en .
+ex:Ministry a owl:Class ; rdfs:label "Ministry or Responsible Organization"@en .
+ex:Agency a owl:Class ; rdfs:label "Implementing Agency"@en .
+ex:Field a owl:Class ; rdfs:label "Budget Field"@en .
+ex:Sector a owl:Class ; rdfs:label "Budget Sector"@en .
+ex:UnitProgram a owl:Class ; rdfs:label "Unit Program"@en .
+ex:SupportType a owl:Class ; rdfs:label "Support Type"@en .
+ex:FiscalSource a owl:Class ; rdfs:label "Fiscal Source"@en .
+ex:BudgetSummary a owl:Class ; rdfs:label "Budget Summary"@en .
+ex:DetailProject a owl:Class ; rdfs:label "Detail Project"@en .
+
+ex:hasMinistry a owl:ObjectProperty ; rdfs:domain ex:Project ; rdfs:range ex:Ministry .
+ex:hasImplementingAgency a owl:ObjectProperty ; rdfs:domain ex:Project ; rdfs:range ex:Agency .
+ex:hasField a owl:ObjectProperty ; rdfs:domain ex:Project ; rdfs:range ex:Field .
+ex:hasSector a owl:ObjectProperty ; rdfs:domain ex:Project ; rdfs:range ex:Sector .
+ex:hasUnitProgram a owl:ObjectProperty ; rdfs:domain ex:Project ; rdfs:range ex:UnitProgram .
+ex:hasSupportType a owl:ObjectProperty ; rdfs:domain ex:Project ; rdfs:range ex:SupportType .
+ex:hasFiscalSource a owl:ObjectProperty ; rdfs:domain ex:Project ; rdfs:range ex:FiscalSource .
+ex:hasBudgetSummary a owl:ObjectProperty ; rdfs:domain ex:Project ; rdfs:range ex:BudgetSummary .
+ex:hasDetailProject a owl:ObjectProperty ; rdfs:domain ex:Project ; rdfs:range ex:DetailProject .
+
+ex:projectName a owl:DatatypeProperty ; rdfs:domain ex:Project ; rdfs:range xsd:string .
+ex:projectCode a owl:DatatypeProperty ; rdfs:domain ex:Project ; rdfs:range xsd:string .
+ex:budget2026 a owl:DatatypeProperty ; rdfs:domain ex:Project ; rdfs:range xsd:decimal .
+ex:budget2025 a owl:DatatypeProperty ; rdfs:domain ex:Project ; rdfs:range xsd:decimal .
+ex:isNewProject a owl:DatatypeProperty ; rdfs:domain ex:Project ; rdfs:range xsd:boolean .
+ex:isContinuingProject a owl:DatatypeProperty ; rdfs:domain ex:Project ; rdfs:range xsd:boolean .

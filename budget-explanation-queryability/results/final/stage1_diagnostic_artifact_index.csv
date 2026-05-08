@@ -1,0 +1,7 @@
+artifact,role,criterion,status
+results/final/text_to_pandas_severe_failure_error_type_summary_f1_lt_05.csv,official_paper_table_5_3A,"F1 < 0.5, n=40",official
+results/final/evaluation_mode_summary_5methods_perturbed_v1.csv,official_paper_table_5_3B,all 100 questions grouped by evaluation_mode,official
+logs/text_to_pandas_severe_failure_cases_f1_lt_05.csv,case_level_support_for_table_5_3A,"F1 < 0.5, n=40",supplementary
+logs/text_to_pandas_low_performance_diagnostics/primary_error_type_summary_f1_lt_07.csv,broader_low_performance_summary,"F1 < 0.7, n=53",supplementary
+logs/text_to_pandas_low_performance_diagnostics/error_flag_summary_f1_lt_07.csv,multi_flag_diagnostic_summary,"F1 < 0.7, n=53",supplementary
+logs/text_to_pandas_low_performance_diagnostics/case_details_f1_lt_07.csv,case_level_low_performance_diagnostics,"F1 < 0.7, n=53",supplementary
